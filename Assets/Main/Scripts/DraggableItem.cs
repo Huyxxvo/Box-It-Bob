@@ -1,78 +1,64 @@
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class DraggableItem : MonoBehaviour
+public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public Texture2D itemTexture;
     public ItemType itemType;
 
-    private VisualElement dragElement;
-    private Vector2 offset;
-    private VisualElement originalParent;
-    private Vector2 originalPosition;
+    private Vector3 originalPosition;
+    private Transform originalParent;
+    private Canvas canvas;
 
-    void OnEnable()
+    void Start()
     {
-        var root = GetComponent<UIDocument>().rootVisualElement;
-
-        dragElement = new VisualElement();
-        dragElement.style.width = 80;
-        dragElement.style.height = 80;
-        dragElement.style.position = Position.Absolute;
-        dragElement.style.left = Random.Range(100, 200);
-        dragElement.style.top = Random.Range(100, 200);
-        dragElement.style.backgroundImage = new StyleBackground(itemTexture);
-        dragElement.AddToClassList(itemType.ToString());
-
-        originalPosition = new Vector2(dragElement.resolvedStyle.left, dragElement.resolvedStyle.top);
-        originalParent = root;
-
-        dragElement.RegisterCallback<PointerDownEvent>(evt =>
-        {
-            offset = new Vector2(evt.position.x, evt.position.y) - new Vector2(dragElement.worldBound.x, dragElement.worldBound.y);
-        });
-
-        dragElement.RegisterCallback<PointerMoveEvent>(evt =>
-        {
-            if (evt.pressedButtons != 1) return;
-            dragElement.style.left = evt.position.x - offset.x;
-            dragElement.style.top = evt.position.y - offset.y;
-        });
-
-        dragElement.RegisterCallback<PointerUpEvent>(evt =>
-        {
-            TryDropIntoSlot(evt.position);
-        });
-
-        root.Add(dragElement);
+        originalPosition = transform.position;
+        originalParent = transform.parent;
+        canvas = GetComponentInParent<Canvas>();
     }
 
-    void TryDropIntoSlot(Vector2 mousePosition)
+    public void OnBeginDrag(PointerEventData eventData)
     {
-        var slots = FindObjectsByType<ItemSlot>(FindObjectsSortMode.None);
-        foreach (var slot in slots)
-        {
-            var doc = slot.GetComponent<UIDocument>();
-            var root = doc.rootVisualElement;
-            var worldRect = root.worldBound;
+        transform.SetParent(canvas.transform);
+    }
 
-            if (worldRect.Contains(mousePosition))
+    public void OnDrag(PointerEventData eventData)
+    {
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform,
+            eventData.position,
+            canvas.worldCamera,
+            out Vector2 localPoint
+        );
+        transform.localPosition = localPoint;
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        DropArea dropArea = GetClosestDropArea();
+        if (dropArea != null && dropArea.acceptedType == itemType)
+        {
+            transform.position = dropArea.transform.position;
+            enabled = false;
+        }
+        else
+        {
+            transform.position = originalPosition;
+            transform.SetParent(originalParent);
+        }
+    }
+
+    private DropArea GetClosestDropArea()
+    {
+        DropArea[] allAreas = FindObjectsByType<DropArea>(FindObjectsSortMode.None);
+        foreach (DropArea area in allAreas)
+        {
+            RectTransform rt = area.GetComponent<RectTransform>();
+            if (RectTransformUtility.RectangleContainsScreenPoint(rt, Input.mousePosition, canvas.worldCamera))
             {
-                if (slot.acceptedType == itemType)
-                {
-                    dragElement.RemoveFromHierarchy();
-                    root.Add(dragElement);
-                    dragElement.style.left = 0;
-                    dragElement.style.top = 0;
-                    dragElement.pickingMode = PickingMode.Ignore;
-                    return;
-                }
+                return area;
             }
         }
-
-        dragElement.RemoveFromHierarchy();
-        originalParent.Add(dragElement);
-        dragElement.style.left = originalPosition.x;
-        dragElement.style.top = originalPosition.y;
+        return null;
     }
 }
