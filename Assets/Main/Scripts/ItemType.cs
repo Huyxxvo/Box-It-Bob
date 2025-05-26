@@ -1,7 +1,7 @@
 public enum ItemType
 {
-    Hairbrush,
     Towel,
-    Soap,
-    BagOfToiletries
+    Hairbrush,
+    BagOfToiletries,
+    Soap
 }
