@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bedroom_box_lava_lamp_0: -3651241684297186231
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
