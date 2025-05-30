@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &1306080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,6 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &31086412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,6 +953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &41443408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,6 +1285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &86100091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1790,6 +1794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &346522113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2121,6 +2126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!82 &373500111
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2501,6 +2507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &458675575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2832,6 +2839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &480293611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3163,6 +3171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &503744880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3494,6 +3503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &518697977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3923,6 +3933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &639464729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4303,6 +4314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &683518605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4634,6 +4646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &754313587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5201,6 +5214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &794541697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5532,6 +5546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &802580055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5863,6 +5878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &831932286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6365,6 +6381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &881667214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6696,6 +6713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &914780937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7076,6 +7094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &981424992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7407,6 +7426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &1187056325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7953,6 +7973,7 @@ RectTransform:
   - {fileID: 340573982}
   - {fileID: 1383630674}
   - {fileID: 880938953}
+  - {fileID: 1826562015}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8119,6 +8140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &1223022887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8653,6 +8675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &1277298576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8984,6 +9007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &1282023867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9635,6 +9659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &1436340502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9966,6 +9991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &1443373541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10706,6 +10732,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceptedType: 7
+--- !u!1 &1826562013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1826562015}
+  - component: {fileID: 1826562014}
+  m_Layer: 0
+  m_Name: ZONE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1826562014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826562013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d5d40efc1e2474db2cbf1b525552dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winSceneName: Winning
+--- !u!4 &1826562015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826562013}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 73.75, z: -5.3349314}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1193094596}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1867785709
 GameObject:
   m_ObjectHideFlags: 0
@@ -10876,6 +10947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &1908476622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11207,6 +11279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumbleZone: {fileID: 2083989732}
+  manager: {fileID: 0}
 --- !u!114 &2018276256
 MonoBehaviour:
   m_ObjectHideFlags: 0
