@@ -10,11 +10,17 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private Transform originalParent;
     private Canvas canvas;
 
+    // Added reference to BoxCompletionChecker
+    private BoxCompletionChecker boxCompletionChecker;
+
     void Start()
     {
         originalPosition = transform.position;
         originalParent = transform.parent;
         canvas = GetComponentInParent<Canvas>();
+
+        // Find BoxCompletionChecker in the scene (assumes there is one)
+        boxCompletionChecker = FindObjectOfType<BoxCompletionChecker>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -40,6 +46,12 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             transform.position = dropArea.transform.position;
             enabled = false;
+
+            // Notify BoxCompletionChecker when item is placed successfully
+            if (boxCompletionChecker != null)
+            {
+                boxCompletionChecker.RegisterItem(itemType);
+            }
         }
         else
         {
