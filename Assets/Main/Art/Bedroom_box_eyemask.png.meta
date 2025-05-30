@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bedroom_box_eyemask_0: 1315855914735371948
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

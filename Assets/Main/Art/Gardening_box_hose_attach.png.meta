@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gardening_box_hose_attach_0: 752099234454122703
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
