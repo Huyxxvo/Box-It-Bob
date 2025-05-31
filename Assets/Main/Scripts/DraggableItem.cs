@@ -13,7 +13,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     // Added reference to BoxCompletionChecker
     private BoxCompletionChecker boxCompletionChecker;
 
-    // 🔊 New: AudioSource for the drop sound
+    // Optional: sound when dropped correctly
     public AudioSource dropSound;
 
     void Start()
@@ -23,13 +23,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         canvas = GetComponentInParent<Canvas>();
 
         // Find BoxCompletionChecker in the scene (assumes there is one)
-        boxCompletionChecker = FindAnyObjectByType<BoxCompletionChecker>();
-
-        // If not manually assigned, try to find a drop sound source in the scene
-        if (dropSound == null)
-        {
-            dropSound = FindAnyObjectByType<AudioSource>();
-        }
+        boxCompletionChecker = FindObjectOfType<BoxCompletionChecker>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -54,24 +48,29 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if (dropArea != null && dropArea.acceptedType == itemType)
         {
             transform.position = dropArea.transform.position;
-            enabled = false;
 
-            // ✅ Play drop sound
-            if (dropSound != null)
-            {
-                dropSound.Play();
-            }
+            dropSound?.Play();
+            boxCompletionChecker?.RegisterItem(itemType);
 
-            // Notify BoxCompletionChecker when item is placed successfully
-            if (boxCompletionChecker != null)
-            {
-                boxCompletionChecker.RegisterItem(itemType);
-            }
+            DisableDragging(); // Fully lock the item after placement
         }
         else
         {
             transform.position = originalPosition;
             transform.SetParent(originalParent);
+        }
+    }
+
+    private void DisableDragging()
+    {
+        // Disable this script
+        enabled = false;
+
+        // Disable raycast target to prevent further clicks
+        Graphic graphic = GetComponent<Graphic>();
+        if (graphic != null)
+        {
+            graphic.raycastTarget = false;
         }
     }
 
