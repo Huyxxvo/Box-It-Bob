@@ -13,6 +13,9 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     // Added reference to BoxCompletionChecker
     private BoxCompletionChecker boxCompletionChecker;
 
+    // 🔊 New: AudioSource for the drop sound
+    public AudioSource dropSound;
+
     void Start()
     {
         originalPosition = transform.position;
@@ -20,7 +23,13 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         canvas = GetComponentInParent<Canvas>();
 
         // Find BoxCompletionChecker in the scene (assumes there is one)
-        boxCompletionChecker = FindObjectOfType<BoxCompletionChecker>();
+        boxCompletionChecker = FindAnyObjectByType<BoxCompletionChecker>();
+
+        // If not manually assigned, try to find a drop sound source in the scene
+        if (dropSound == null)
+        {
+            dropSound = FindAnyObjectByType<AudioSource>();
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -46,6 +55,12 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             transform.position = dropArea.transform.position;
             enabled = false;
+
+            // ✅ Play drop sound
+            if (dropSound != null)
+            {
+                dropSound.Play();
+            }
 
             // Notify BoxCompletionChecker when item is placed successfully
             if (boxCompletionChecker != null)
