@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: Box-It-Bob
-  defaultCursor: {fileID: 2800000, guid: a004022d910e74a02ad0e4e103c50d35, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 3af8ee8d0d7fe483a96051b6d0a947b3, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
