@@ -11,7 +11,8 @@ public class ZoneManager : MonoBehaviour
 
     void Start()
     {
-        allImages.AddRange(FindObjectsOfType<RandomizeOnceOnEnter>());
+        // Updated to use the new method
+        allImages.AddRange(FindObjectsByType<RandomizeOnceOnEnter>(FindObjectsSortMode.None));
         foreach (var image in allImages)
         {
             image.manager = this;

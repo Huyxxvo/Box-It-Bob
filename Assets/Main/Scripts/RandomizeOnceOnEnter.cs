@@ -8,7 +8,6 @@ public class RandomizeOnceOnEnter : MonoBehaviour, IBeginDragHandler, IDragHandl
 
     private RectTransform rectTransform;
     private bool wasInZoneLastFrame = false;
-    private bool isDragging = false;
 
     void Start()
     {
@@ -43,7 +42,7 @@ public class RandomizeOnceOnEnter : MonoBehaviour, IBeginDragHandler, IDragHandl
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        isDragging = true;
+        // Drag started
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -53,7 +52,6 @@ public class RandomizeOnceOnEnter : MonoBehaviour, IBeginDragHandler, IDragHandl
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        isDragging = false;
         manager?.TryCheckWin(); // Check for win after releasing
     }
 

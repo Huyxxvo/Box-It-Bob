@@ -10,7 +10,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private Transform originalParent;
     private Canvas canvas;
 
-    // Added reference to BoxCompletionChecker
+    // Reference to BoxCompletionChecker
     private BoxCompletionChecker boxCompletionChecker;
 
     void Start()
@@ -19,8 +19,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         originalParent = transform.parent;
         canvas = GetComponentInParent<Canvas>();
 
-        // Find BoxCompletionChecker in the scene (assumes there is one)
-        boxCompletionChecker = FindObjectOfType<BoxCompletionChecker>();
+        // Updated to use the recommended method
+        boxCompletionChecker = FindFirstObjectByType<BoxCompletionChecker>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
